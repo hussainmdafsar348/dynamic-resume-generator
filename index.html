@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>CV Generator</title>
+</head>
+
+<body>
+
+    <div class=" container" id="cv-form">
+        <!-- Containers are used to pad the content inside of them, and there are two container classes available:The .container class provides a responsive fixed width container -->
+        <!-- The .container-fluid class provides a full width container, spanning the entire width of the viewport -->
+
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center">By Md Afsar Hussain</p>
+<!-- heading and subheading given -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <!-- bootstrapt col-md-6 divide the page in 2 column keeping grid of 6 -->
+                <!-- first column -->
+                <h3>Personal Information</h3>
+  
+
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" placeholder="Enter name here" id="nameField" class="form-control">
+                    <!-- Action- destination where we need the data of the form
+                         Method –post
+                         Type is a text, date, password, textbox,
+                        Placeholder- gives temporary name in the box
+                         Name- by which system will give unique name -->
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="contactField">Your Contact</label>
+                    <input type="text" placeholder="Enter contact" id="contactField" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="addressField mt-2">Your Address</label>
+                    <textarea placeholder="Enter name here" id="addressField" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="">Select Photo</label>
+                    <input type="file" id="imgField" class="form-control">
+<!-- selecting photo  form-group -->
+                </div>
+
+                <p class="text-secondary my-3">Important Links</p>
+                <div class="form-group mt-2">
+                    <label for="fbField">Facebook Link</label>
+                    <input type="text" placeholder="Enter contact" id="fbField" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="instaField">insta link </label>
+                    <input type="text" placeholder="Enter contact" id="instaField" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="linkedField">Linkdin Link </label>
+                    <input type="text" placeholder="Enter contact" id="linkedField" class="form-control">
+                </div>
+            </div>
+
+
+
+      <!-- 2nd column -->
+
+            <div class="col-md-6">
+          
+                <h3>Professional Details</h3>
+                <div class="form-group mt-2">
+                    <label for=""> Objective</label>
+                    <textarea id="objectiveField" placeholder="Enter here" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group mt-2" id="we"> 
+                    <label for=""> Work Experience </label>
+                    <textarea placeholder="Enter Experience" class="form-control weField" rows="1"></textarea>
+
+                    <!-- new work experience textareas -->
+
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addNewWeField()" class="btn btn-primary btn-sm my-2">Add</button>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group mt-2" id="Aq">
+                    <label for=""> Academic Qualification </label>
+                    <textarea placeholder="Enter Acedemic" class="form-control eqField" rows="5"></textarea>
+
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="addNewAQField()" class="btn btn-primary btn-sm my-2">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center my-5">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+    </div>
+    <!-- cv Templates -->
+
+    <div class="container" id="cv-template">
+
+        <div class="row mt-5">
+            <!-- grid system of bootstrap -->
+            <div class="col-md-4 text-center background ">
+                <!-- this is first column -->
+
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg"
+                    alt="" class="img-fluid myimg"
+                    id="imgTemplate"
+                     />
+
+                <div class="container ">
+                    <p id="nameT1">Aman kumar Tiwari</p>
+                    <p id="contactT">937263448,7735825677</p>
+                    <p id="addressT">west champraran, bihar, india</p>
+                    <hr>
+                    <p><a id="fbT" href="#1">http://www.facebook.com</a></p>
+                    <p><a id="instaT" href="#1">http://insta.com</a></p>
+                    <p><a id="linkedT" href="#1">http://Linkdin.com</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-8 py-5">
+                <!-- 2nd columne -->
+                <h1 class="text-center" id="nameT2">Aman Kumar Tiwari</h1>
+
+                <!-- objective card -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Sed velit pariatur eum tenetur nisi enim aliquam sunt nam magni hic dolorem
+                            impedit animi maiores voluptatibus, debitis perspiciatis, architecto nemo commodi autem.
+                            Adipisci perferendis beatae iure pariatur, exercitationem nam quia natus! Alias
+                            velit maxime animi debitis beatae assumenda tenetur corrupti totam?
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- work experience -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT"> 
+                            <li> working in HR Recruiter Mastech Digital </li>
+                            <li> working in Artech LLC</li>
+                            <li> working in devjob</li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Academic Qualification -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Acedemic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+
+                            <li> 10th class </li>
+                            <li> 12th class</li>
+                            <li> college</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <Div class="container text-center my-3">
+                    <!-- my is margin y axis -->
+                    <button class="btn background" onclick="printCV()">Print CV</button>
+                    <!-- button is made having print cv funtion. on click the funtion will get activated  -->
+                </Div>
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+        <!-- jsc link from bootstrap copied -->
+    <script src="script.js">
+        // js page to link
+
+    </script>
+</body>
+
+</html>

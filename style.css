@@ -1,0 +1,27 @@
+.myimg{
+    border-radius: 50%;
+    width: 200px;
+    border: 1px solid red;
+}
+
+.background {
+    background-color: rgb(56, 236, 176)
+    
+}
+
+/* .card-header {
+    text-align: left;
+}
+
+.form-control {
+    text-align: left; */
+/* } */
+
+#cv-template {
+    display: none;   
+    /* this will hide the template in display only format will be seen// */
+}
+
+
+
+
